@@ -1,28 +1,31 @@
 ---
 ---
 
-@import 'syntax-highlighting'
-
+@import 'reset.css'
+@import 'solarized_light.css'
 @import 'bourbon/bourbon'
+@import url(//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css)
 
 .cf
   @include clearfix
 
 $rs: 16px
 
-$font-post: 'Spoqa Han Sans'
-//$font-serif: Linux Libertine, 'KoPub Batang'
-//$font-serif: Linux Libertine, 'Noto Sans KR'
-//$font-serif:  Linux Libertine, 'Spoqa Han Sans'
-//$font-serif: Linux Libertine, Open Sans, 'Noto Sans KR'
-$font-sans: Open Sans, MundoSans, "Helvetica Neue", Arial, Helvetica, sans-serif
-
 // serif: 바탕, 궁서체
 //$font-serif: Linux Libertine
-
-// Sans-serif: 돋움, 굴림체
+//$font-serif: 'KoPub Batang'
+//$font-serif: 'Noto Sans KR'
+//$font-sans: Open Sans, MundoSans, "Helvetica Neue", Arial, Helvetica, sans-serif
+$font-sans: "Spoqa Han Sans", "spoqahansans", "Apple SD Gothic Neo", "Nanum Barun Gothic", "Nanum Gothic", Verdana, Arial, "Malgun Gothic", Dotum, sans-serif
+// Sans-serif: 돋움, 굴림체 (Sans 가 '~이 없이' 삐침이 없는 글씨체 = 고딕)
 //$font-sans: Open Sans, MundoSans, "Helvetica Neue", Arial, Helvetica, sans-serif
 
+// Typekit Font loader attrs
+.wf-loading body
+  font-family: "Apple SD Gothic Neo", "Nanum Barun Gothic", "Nanum Gothic", Verdana, Arial, "Malgun Gothic", Dotum, sans-serif
+
+.hljs, .highlight
+  background: #f3f5f6
 
 @mixin respond-to($breakpoint)
   @media only screen and (max-width: $breakpoint + px)
@@ -35,7 +38,18 @@ $font-sans: Open Sans, MundoSans, "Helvetica Neue", Arial, Helvetica, sans-serif
 main
   display: block
 
+.text-left
+  text-align: left
+.text-right
+  text-align: right
+.text-center
+  text-align: center
 
+figcaption
+  text-align: center
+  font-size: 14px
+  color: #a9afb3
+  margin-bottom: 20px
 
 body
   font-family: $font-sans
@@ -61,10 +75,6 @@ body
   .logo
     display: block
     position: absolute
-    //top: $rs/2
-    //left: $rs/2
-    //width: $rs*2
-    //height: $rs*2
     top: 0px
     left: 0px
     width: $rs*3
@@ -116,12 +126,12 @@ body
   .blog-title
     margin: 0
     padding: $rs*5.25 $rs $rs/2
-    font-size: 50px
+    font-size: 44px
     text-align: center
     font-weight: 700
     letter-spacing: -2px
     outline: 0
-    line-height: 50px
+    line-height: 44px
     word-break: break-word
     color: #333
   .blog-description
@@ -142,7 +152,7 @@ body
       &:hover
         color: #333
 
-// 첫화면
+// content.post.post-content
 .content
   width: 100%
   max-width: 640px
@@ -247,8 +257,44 @@ body
     &:hover
       color: #333
 
-//포스트
+// content.post.post-content
 .post
+  p a,
+  ol a,
+  ul a
+    padding-right: 2px
+    &:hover
+      text-decoration: underline
+  blockquote p
+    padding-top: 0
+    padding-bottom: 0
+  ul,
+  ol
+    margin: 20px 0 20px 40px
+  li
+    margin: 6px 0
+    line-height: 1.9em
+  pre
+    width: calc(100% - 42px)
+  ol li ul,
+  ol li ol,
+  ul li ul,
+  ul li ol
+    margin: 0 0 0 40px
+  hr
+    border: 0
+    height: 0
+    border-top: 1px solid rgba(0, 0, 0, 0.1)
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3)
+  caption
+    margin: 10px
+  h1
+    font-size: 32px
+  img
+    max-width: 100%
+    display: block
+    padding-top: 18px
+    padding-bottom: 18px
   .article-image
     position: absolute
     background-color: #000
@@ -298,7 +344,7 @@ body
       font-weight: 700
       font-style: normal
       letter-spacing: -0.04em
-      font-size: 50px
+      font-size: 44px
       line-height: 1.1
       color: #fff
       margin-bottom: 16px
@@ -347,7 +393,7 @@ body
       font-weight: 700
       font-style: normal
       letter-spacing: -0.04em
-      font-size: 50px
+      font-size: 44px
       line-height: 1.1
       color: #333332
       margin-bottom: 16px
@@ -375,17 +421,16 @@ body
       white-space: nowrap
       text-overflow: ellipsis
 
-  // 블로그 컨텐츠
+  // content.post.post-content
   .post-content
     width: 100%
+    font-family: $font-sans
     font-size: 17px
     line-height: 1.5em
     color: #4d5256
-    font-family: $font-post
     -webkit-font-smoothing: antialiased
     word-break: keep-all
     h1, h2, h3, h4, h5, h6
-      font-family: $font-post
       margin-top: 2.5em
       margin-bottom: 1em
     h1
@@ -398,19 +443,19 @@ body
       font-weight: 700
       line-height: 1.5em
     h1
-      font-size: 44px
+      font-size: 32px
     h2
       font-size: 32px
     h3
       font-size: 22px
     h4
-      color: #81878b
       font-size: 22px
+      color: #81878b
     h5
       font-size: 16px
     h6
-      color: #81878b
       font-size: 16px
+      color: #81878b
       font-weight: bold
     p
       margin: 0 0 0.5em
@@ -425,78 +470,11 @@ body
       font-weight: bold
     dd
       margin-left: 0
-    dd + dt
-      margin-top: 50px
+      + dt
+        margin-top: 50px
     small
       font-size: 14px
       -webkit-font-smoothing: subpixel-antialiased
-    a
-      color: #4c80f1
-      text-decoration: none
-      &:hover
-        text-decoration: underline
-    img
-      max-width: 100%
-      margin: 0 auto
-    figure
-      margin: 0
-      padding: 0 0 30px
-    figcaption
-      font-weight: 400
-      font-style: italic
-      //font-size: 16px
-      font-size: 14px
-      line-height: 1.3
-      color: #666665
-      outline: 0
-      z-index: 300
-      text-align: center
-    //hr
-    //  border: 0
-    //  padding: 0
-    //  display: block
-    //  width: 15%
-    //  margin: 30px auto
-    //  border: 0px solid #ddd
-    //  border-top: 1px solid #ddd
-
-    // 라인으로 보이게 설정
-    hr
-      border: 0
-      height: 0
-      border-top: 1px solid rgba(0, 0, 0, 0.1)
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3)
-    blockquote
-      margin: 0 0 30px
-      margin-left: -26px
-      border-left: 3px solid #57ad68
-      padding-left: 20px
-      p
-        letter-spacing: 0.01rem
-        font-weight: 400
-        font-style: italic
-        mborder-left: 3px solid #57ad68
-        mpadding-left: 20px
-        mmargin-left: -26px
-        padding-bottom: 3px
-    ul, ol
-      padding: 0 0 30px
-      margin: 0
-    li
-      padding: 0
-      font-weight: 400
-      font-style: normal
-      //font-size: 23px
-      font-size: 20px
-      line-height: 30px
-      margin-left: 30px
-      margin-bottom: 12px
-      padding-top: 2px
-      p
-        padding: 0 0 golden-ratio(1rem,  1)
-    ol li
-      list-style-type: decimal
-
 
   .bottom-teaser
     padding: 50px 0
@@ -611,12 +589,12 @@ body
     .blog-title
       margin: 0
       padding: 0 0 10px
-      font-size: 50px
+      font-size: 44px
       text-align: center
       font-weight: 700
       letter-spacing: -2px
       outline: 0
-      line-height: 50px
+      line-height: 44px
       word-break: break-word
       color: #fff
       text-shadow: 0px 1px 16px rgba(0,0,0,0.5), 0px 0px 1px rgba(0,0,0,0.5)
@@ -654,24 +632,97 @@ body
 .post-tag-articleimage
   display: none
 
-pre,
-code
-  font-size: 15px
-  border: 1px solid #e8e8e8
-  border-radius: 3px
-  background-color: #eef
+pre code
+  word-wrap: break-word
+  width: 100%
+  border: none
+  padding: 0
+  margin: 0
 
 code
-  padding: 1px 5px
+  font-family: "Source Code Pro", Consolas, "Letter Gothic Std", Courier, "Nanum Gothic Coding", monospace
 
 pre
-  padding: 8px 12px
-  overflow-x: scroll
-  > code
-    border: 0
-    padding-right: 0
-    padding-left: 0
+  margin: 10px 0
+  padding: 20px
+  display: inline-block
+  width: 100%
+  background: #f3f5f6
+  border: 1px solid #e1e4e6
+  border-radius: 2px
 
+p code, pre code, li code, code
+  font-family: 'Hack', monospace
+  font-size: 15px
+  border-radius: 4px
+
+pre
+  border-radius: 4px
+
+a.footnote
+  &,
+  .post p &,
+  .post ol &,
+  .post ul &
+    margin: 0 3px
+    padding: 2px 6px 2px
+    font-size: 14px
+    text-align: center
+    -webkit-text-stroke: 0.25px
+    border: 1px solid #e1e4e6
+    border-radius: 2px
+    -webkit-transition: 0.2s ease-out all
+    text-decoration: none
+
+    &:hover
+      background: #eaedef
+
+.footnotes
+  margin-top: 60px
+  border-top: 1px solid #e1e4e6
+
+  &.post li,
+  &.post li p
+    font-size: 14px
+
+@media only screen and (min-width: 332px)
+  .post img
+    &.w500
+      max-width: 500px
+    &.w412
+      max-width: 412px
+    &.w513
+      max-width: 513px
+    &.w622
+      max-width: 622px
+    &.w485
+      max-width: 485px
+    &.w400
+      max-width: 400px
+    &.w600
+      max-width: 600px
+    &.w379
+      max-width: 379px
+    &.w660
+      max-width: 660px
+    &.w472
+      max-width: 472px
+    &.w332
+      max-width: 332px
+    &.w618
+      max-width: 618px
+    &.w688
+      max-width: 688px
+    &.w658
+      max-width: 658px
+    &.w419
+      max-width: 419px
+    &.w565
+      max-width: 565px
+    &.w611
+      max-width: 611px
+    &.w308
+      max-width: 308px
 
 ::selection
   color: #fff
