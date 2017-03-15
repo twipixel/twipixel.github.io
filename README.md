@@ -1,78 +1,101 @@
-mediator
+
+TWIP + PIXEL
 ========
 
-A medium inspired Jekyll blog theme. The basic idea came from the Ghost theme
-[Readium 2.0](http://www.svenread.com/readium-ghost-theme/). I use mediator on my own blog [The Base](http://blog.base68.com).
+경험을 기록하고 공유합니다. 환경은 Mac 입니다.
 
-Screenshots
---------
-![screenshot](/assets/images/screenshot1.jpg)
-![screenshot](/assets/images/screenshot2.jpg)
-![screenshot](/assets/images/screenshot3.jpg)
 
-Features
+
+
+블로그 환경 설정
 -------
-* Fully Responsive layout
-* Use header images in articles, if you want to (add tag "image" and url to the image in the front matter section of a post)
-* Minimal design
-* Featured article support
-* FontAwesome implemented for easy use of icons fonts
-* Free & Open Source Font usage
 
-Getting Started
----
-- [Fork this repository](https://github.com/dirkfabisch/mediator)
-- Clone it: `git clone https://github.com/YOUR-USER/mediator`
-- Install the requried gems ([GitHub Pages](https://github.com/github/pages-gem), [Bourbon](https://github.com/thoughtbot/bourbon) and [Jekyll](https://github.com/jekyll/jekyll), [Jemoji](https://github.com/jekyll/jemoji)): `bundle install`
-- Run the jekyll server: `bundle exec jekyll serve`
+Ruby, Jekyll, Bundler 설치
 
-You should have a server up and running locally at <http://localhost:4000>.
-
-Configuration
------
-
-The main settings happen in side of the _config.yml file:
-
-### Site
-
-Main settings for the site
-
-* **title**: name of your site
-* **description**: description of your site
-* **logo**: small logo for the site (300x * 300x)
-* **cover**: large background image on the index page
-
-* **name**: name site owner
-* **email**: mail address of the site owner
-* **author**: author name
-* **author_image**: small image of author (300x * 300px)
-* **disqus**: add a disqus forum for your post
-
-### Social
-
-The template allows to add all major social platforms to your site.
-Fill the the form for each platform. If you leave the share_* entries empty, the sharing buttons below a post are not shown.  If you leave the **url** and **desc** empty the icons are not shown on the index page, but the share icons on the article pages remains untouched (Thanks to [Phil](https://github.com/philsturgeon))
-
-* **icon**:	name of social platform (must match a name of [font-awsome](http://fortawesome.github.io/Font-Awesome/) icon set )
-* **url**:	url of your account
-* **desc**: slogan of the platform
-* **share_url**: share url
-* **share_title**: first part of url for the title
-* **share_link**: second part of the share url for the link to the post
-
-The Liquid template engine will magical combine the different parts to a share url.
+1. Xcode 없이 Command Line Tools 설치
+2. Xcode license 동의
+3. Homebrew 설치
+4. Ruby 설치
+5. Jekyll과 Bundler 설치
+6. Jekyll 버전 확인
 
 ```
-http://twitter.com/share?text=post_title&amp;url=post_url
-````
+1. xcode-select --install
+2. sudo xcodebuild -license
+3. /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+4. brew install ruby
+5. sudo gem install jekyll bundler
+6. jekyll -v
+```
 
-See [_config.yml](https://github.com/dirkfabisch/mediator/blob/master/_config.yml) for more examples.
 
-Licensing
----------
 
-[MIT](https://github.com/dirkfabisch/mediator/blob/master/LICENCE) with no added caveats, so feel free to use this on your site without linking back to me or using a disclaimer or anything silly like that.
 
-Contact
--------
-I'd love to hear from you at [@dirkfabisch](https://twitter.com/dirkfabisch). Feel free to open issues if you run into trouble or have suggestions. Pull Requests always welcome.
+블로그 생성, 확인 
+---
+
+- 사용자 디렉토리 진입
+- Jekyll 로 블로그 생성
+- 생성한 블로그 진입
+- Jekyll 서버 실행
+- 브라우저 열고 주소 입력: http://localhost:4000
+
+```
+1. cd /Users/사용자명
+2. jekyll new twipixel.github.io
+3. cd twipixel.github.io
+4. bundle exec jekyll serve
+5. Now browse to http://localhost:4000
+```
+
+
+
+## Github 연결, 확인
+
+1. 블로그 폴더 진입
+2. git 초기화
+3. git remote 연결
+4. git add
+5. git commit
+6. git push
+7. 생성한 블로그 접속: https://twipixel.github.io
+
+```
+1. cd /Users/사용자명/사용자명.github.io
+2. git init
+3. git remote add origin https://github.com/사용자명/사용자명.github.io.git
+4. git add .
+5. git commit -m '블로그 생성'
+6. git push origin master
+7. Now browse to https://twipixel.github.io
+```
+
+
+
+## Jekyll Theme 적용
+
+http://jekyllthemes.org
+
+적용 방법은 테마를 내려받아 내 블로그에 덮어씌우고
+
+테마 저장소의 README를 참고하여 수정하면 됩니다.
+
+ 
+
+## Gemfile, Gemfile.lock
+
+테마에 Gemfile, Gemfile.lock 이란 파일이 있습니다.
+
+해당 테마에 필요한 gem이 기술되어 있습니다.
+
+`bundle install` 을 실행하면 테마에 필요한 모든 파일을 알아서 설치합니다.
+
+
+참고 사이트
+-----
+
+- [Install Jekyll on Mac OS X](http://jekyll.tips/jekyll-casts/install-jekyll-on-os-x/)
+- [https://jekyllrb.com/](https://jekyllrb.com/)
+- [Jekyll 오류 해결법](https://kde713.github.io/tips/2017/02/21/jekyll-installation-error-solution.html) 
+- [Bundler](http://ruby-korea.github.io/bundler-site/)
+
