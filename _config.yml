@@ -16,7 +16,7 @@ logo: "/assets/logo.png"
 float_logo: true # true, false (default)
 
 # blog cover
-cover: "/assets/bg.png"
+cover: "/assets/front.png"
 
 name: 'twipixel'
 author: 'twipixel'
