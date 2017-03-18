@@ -2,14 +2,16 @@
 ## TWIP + PIXEL 블로그
 
 경험을 기록하고 공유하는 공간입니다.
+<br>
+<br>
 
--
 
 #### Jekyll 설정
 
 MacOS에서 Jekyll 설치 방법입니다.
+<br>
+<br>
 
--
 
 #### 블로그 환경 설정
 
@@ -30,6 +32,8 @@ jekyll -v
 - Ruby 설치
 - Jekyll과 Bundler 설치
 - Jekyll 버전 확인
+<br>
+<br>
 
 
 #### 블로그 생성
@@ -49,6 +53,8 @@ Now browse to http://localhost:4000
 - 생성한 블로그 진입
 - Jekyll 서버 실행
 - 브라우저 열고 주소 입력: http://localhost:4000
+<br>
+<br>
 
 
 #### Github 연결
@@ -72,6 +78,8 @@ Now browse to https://twipixel.github.io
 - git commit
 - git push
 - 생성한 블로그 접속: https://twipixel.github.io
+<br>
+<br>
 
 
 #### Theme 적용
@@ -85,6 +93,8 @@ Now browse to https://twipixel.github.io
     - 테마에 Gemfile, Gemfile.lock 파일이 있다면
     `bundle install`을 실행합니다. Gemfile 안에는 테마에 필요한
     모든 gem이 기술되어 있으며 `bundle install` 을 통해 설치할 수 있습니다.
+<br>
+<br>
 
 
 #### 참고 사이트
