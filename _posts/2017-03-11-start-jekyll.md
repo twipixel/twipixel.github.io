@@ -74,7 +74,7 @@ $ Now browse to http://localhost:4000
 
 ### Github 연결
 
-[Github](https://github.com)에 생성한 블로그를 올리고 확인합니다.
+[Github][github]에 생성한 블로그를 올리고 확인합니다.
 
 ```bash
 $ cd /Users/사용자명/사용자명.github.io
@@ -95,13 +95,13 @@ $ Now browse to https://twipixel.github.io
 - Github 에서 블로그 확인하기: https://twipixel.github.io
 
 
-### Jekyll Theme 적용
+### Theme 적용
 
-[http://jekyllthemes.org](http://jekyllthemes.org)에 다양한 테마가 있습니다.
+[http://jekyllthemes.org][jekyll-themes]에 다양한 테마가 있습니다.
 원하는 테마를 다운받아 내 블로그에 덮어씌우고 테마 저장소의 README를 참고하여 수정합니다.
 
 
-- [Gemfile, Gemfile.lock](http://ruby-korea.github.io/bundler-site)
+- [Gemfile, Gemfile.lock][bundler-site]
 
     - 테마에 Gemfile, Gemfile.lock 파일이 있다면 `bundle install`을 실행합니다. Gemfile 안에는 테마에 필요한 모든 gem이 기술되어 있으며 `bundle install` 을 통해 설치할 수 있습니다.
 
@@ -115,7 +115,9 @@ $ Now browse to https://twipixel.github.io
 [hexo]: https://hexo.io/ko
 [hexo-themes]: https://hexo.io/themes
 [ghost]: http://docs.ghost.org/ko
+[github]: https://github.com
+[jekyll-themes]: http://jekyllthemes.org
 [markdown]: https://ko.wikipedia.org/wiki/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4
 [static-web-site-generator]: http://zetawiki.com/wiki/%EC%A0%95%EC%A0%81_%EC%9B%B9%ED%8E%98%EC%9D%B4%EC%A7%80,_%EB%8F%99%EC%A0%81_%EC%9B%B9%ED%8E%98%EC%9D%B4%EC%A7%80
-[tim-gouw]: https://unsplash.com/@punttim
+[bundler-site]: http://ruby-korea.github.io/bundler-site
 
