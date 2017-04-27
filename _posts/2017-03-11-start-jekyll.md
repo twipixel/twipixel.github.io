@@ -2,8 +2,8 @@
 layout: post
 title: Jekyll 시작
 date: 2017-03-11 23:50:00
-categories: mediator featured
-tags: jekyll
+categories: [dev]
+tags: [jekyll]
 image: /assets/images/2017-03-11-start-jekyll/desktop.png
 image2: /assets/images/2017-03-11-start-jekyll/mobile.png
 ---
@@ -101,10 +101,17 @@ $ Now browse to https://twipixel.github.io
 원하는 테마를 다운받아 내 블로그에 덮어씌우고 테마 저장소의 README를 참고하여 수정합니다.
 
 
-- [Gemfile, Gemfile.lock][bundler-site]
+##### [Gemfile, Gemfile.lock][bundler-site]
 
-    - 테마에 Gemfile, Gemfile.lock 파일이 있다면 `bundle install`을 실행합니다. Gemfile 안에는 테마에 필요한 모든 gem이 기술되어 있으며 `bundle install` 을 통해 설치할 수 있습니다.
+테마에 Gemfile, Gemfile.lock 파일이 있다면 `bundle install`을 실행합니다. Gemfile 안에는 테마에 필요한 모든 gem이 기술되어 있으며 `bundle install` 을 통해 설치할 수 있습니다.
 
+<br>
+
+---
+
+###### IMAGE
+
+[MAROQUOTIDIEN PLUS][image-from]
 
 
 [jekyll-en]: https://jekyllrb.com
@@ -120,4 +127,4 @@ $ Now browse to https://twipixel.github.io
 [markdown]: https://ko.wikipedia.org/wiki/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4
 [static-web-site-generator]: http://zetawiki.com/wiki/%EC%A0%95%EC%A0%81_%EC%9B%B9%ED%8E%98%EC%9D%B4%EC%A7%80,_%EB%8F%99%EC%A0%81_%EC%9B%B9%ED%8E%98%EC%9D%B4%EC%A7%80
 [bundler-site]: http://ruby-korea.github.io/bundler-site
-
+[image-from]: https://unsplash.com/photos/EbgR1SZJ3Dg
