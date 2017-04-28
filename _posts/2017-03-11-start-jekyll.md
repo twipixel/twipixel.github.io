@@ -2,8 +2,8 @@
 layout: post
 title: Jekyll 시작
 date: 2017-03-11 23:50:00
-categories: [dev]
-tags: [jekyll]
+categories: dev
+tags: jekyll
 image: /assets/images/2017-03-11-start-jekyll/desktop.png
 image2: /assets/images/2017-03-11-start-jekyll/mobile.png
 ---
@@ -111,7 +111,7 @@ $ Now browse to https://twipixel.github.io
 
 ###### IMAGE
 
-[MAROQUOTIDIEN PLUS][image-from]
+- [MAROQUOTIDIEN PLUS][image-from]
 
 
 [jekyll-en]: https://jekyllrb.com
