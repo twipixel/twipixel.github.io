@@ -25,8 +25,7 @@ author_image: "/assets/author.png"
 paginate:	5
 
 url: "http://twipixel.github.io" # the base hostname & protocol for your site
-blogurl: "http://twipixel.com"
-baseurl: "http://twipixel.com"
+baseurl: ""
 #used to display twitter cards
 twitter_handle: '@playtwip'
 
