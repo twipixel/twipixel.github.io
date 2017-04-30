@@ -1,11 +1,11 @@
 ---
 layout: post
-title: BIT FLAG (비트플래그)
-date: 2017-03-11 23:50:00
+title: Linked List (연결 리스트)
+date: 2017-04-30 01:00:00
 categories: dev
-tags: bit-flag
-image: /assets/images/2017-04-27-bit-flag/desktop.png
-image2: /assets/images/2017-04-27-bit-flag/mobile.png
+tags: linked-list
+image: /assets/images/2017-04-30-linked-list/desktop.png
+image2: /assets/images/2017-04-30-linked-list/mobile.png
 ---
 
 #### Linked List (연결 리스트)
@@ -23,5 +23,5 @@ image2: /assets/images/2017-04-27-bit-flag/mobile.png
 
 
 [bit-flag]: https://dojang.io/mod/page/view.php?id=184
-[image-from]: https://unsplash.com/search/switch?photo=CrbI6xF1vtA
+[image-from]: https://unsplash.com/search/hand?photo=nvKQ1kxheRc
 [jsfiddle]: https://jsfiddle.net/twipixel/hg6L1mjz/
