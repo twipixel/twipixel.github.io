@@ -3,7 +3,7 @@ layout: post
 title: Linked List (연결 리스트)
 date: 2017-04-30 01:00:00
 categories: [개발이야기]
-tags: [LINKED LIST, 연결 리스트, JS, JAVASCRIPT, 자바스크립트]
+tags: [LINKED LIST, 연결 리스트, JS, JAVASCRIPT, 자바스크립트, featured]
 image: /assets/images/2017-04-30-linked-list/desktop.png
 image2: /assets/images/2017-04-30-linked-list/mobile.png
 ---
@@ -12,94 +12,9 @@ image2: /assets/images/2017-04-30-linked-list/mobile.png
 
 
 
-###### 테스트 하기
-
-예제를 실행하면 우측 상단에 아래의 버튼들이 있습니다.
-
-- addListener (리스너 등록)
-- removeListener (리스너 삭제)
-- displayListeners (남아 있는 리스너 보기, 오류 있슴)
-- changeUpdate (업데이트 함수 변경, 토글)
-
-
-
-###### addListener
-
-클릭하면 Listener를 등록하고 등록된 Listener의 tick 함수가 호출되며 duration 이후 종료합니다.
-
-
-
-###### changeUpdate
-
-update 함수를 토글합니다. {true: 패딩과 함께 업데이트, false: 패딩 없이 업데이트}
-
-
-
-###### 패딩 없이 업데이트하는 경우
-
-패딩 없이 업데이트하면 마지막에 등록된 Listener의 tick 함수는 호출하지 않습니다.
-
-
-
-###### 호출하지 않는 이유
-
-아래에 연결 리스트 생성 과정과 호출 순서를 표로 작성하였습니다
-
-[패딩이 없는 경우 update 함수 호출 순서](#reason) 를 참고하세요.
-
-
-
-###### _tickerListenerPaddings 생성과 연결 상태
-
-| 생성 순서 | nextListener | prevListener |
-| ----- | ------------ | ------------ |
-| [0]   | 1            | null         |
-| [1]   | 2            | 0            |
-| [2]   | 3            | 1            |
-| [n]   | n + 1        | n - 1        |
-| [9]   | null         | 8            |
-
-
-
-###### addListener 호출 시 연결 상태
-
-| _numListeners | in _first | nextListener | prevListener | out _first |
-| ------------- | --------- | ------------ | ------------ | ---------- |
-| 0             | null      | null         | 1            | 0          |
-| 1             | 0         | 0            | 2            | 1          |
-| 2             | 1         | 1            | 3            | 2          |
-| 3             | 2         | 2            | null         | 3          |
-
-
-
-###### 패딩이 있는 경우 update 함수 호출 순서 
-
-| listener id | nextListener | prevListener |
-| ----------- | ------------ | ------------ |
-| padding     | 3            | null         |
-| 3           | 2            | padding      |
-| 2           | 1            | 3            |
-| 1           | 0            | 2            |
-| 0           | null         | 1            |
-
-
-
-###### 패딩이 없는 경우 update 함수 호출 순서 <a id="reason"></a>
-
-| listener id | nextListener | prevListener |
-| ----------- | ------------ | ------------ |
-| 3           | 2            | null         |
-| 2           | 1            | 3            |
-| 1           | 0            | 2            |
-| 0           | null         | 1            |
-
-패딩이 없으면 마지막에 등록된 리스너의 tick 함수는 호출되지 않습니다.
-
-
-
 ###### [JavaScript][jsfiddle]
 
-```javascript
+```
 // requestAnim shim layer by Paul Irish
 window.requestAnimFrame = (function() {
   return window.requestAnimationFrame ||
@@ -532,7 +447,95 @@ function echo(message) {
   document.body.appendChild(div);
   div.innerHTML = message;
 }
+
 ```
+
+
+
+###### 테스트 설명
+
+예제를 실행하면 우측 상단에 아래의 버튼들이 있습니다.
+
+- addListener (리스너 등록)
+- removeListener (리스너 삭제)
+- displayListeners (남아 있는 리스너 보기, 오류 있슴)
+- changeUpdate (업데이트 함수 변경, 토글)
+
+
+
+###### addListener
+
+클릭하면 Listener를 등록하고 등록된 Listener의 tick 함수가 호출되며 duration 이후 종료합니다.
+
+
+
+###### changeUpdate
+
+update 함수를 토글합니다. {true: 패딩과 함께 업데이트, false: 패딩 없이 업데이트}
+
+
+
+###### 패딩 없이 업데이트하는 경우
+
+패딩 없이 업데이트하면 마지막에 등록된 Listener의 tick 함수는 호출하지 않습니다.
+
+
+
+###### 호출하지 않는 이유
+
+아래에 연결 리스트 생성 과정과 호출 순서를 표로 작성하였습니다
+
+[패딩이 없는 경우 update 함수 호출 순서](###### 패딩이 없는 경우 update 함수 호출 순서) 를 참고하세요.
+
+
+
+###### _tickerListenerPaddings 생성과 연결 상태
+
+| 생성 순서 | nextListener | prevListener |
+| ----- | ------------ | ------------ |
+| [0]   | 1            | null         |
+| [1]   | 2            | 0            |
+| [2]   | 3            | 1            |
+| [n]   | n + 1        | n - 1        |
+| [9]   | null         | 8            |
+
+
+
+###### addListener 호출 시 리스트 연결 상태
+
+| _numListeners | in _first | nextListener | prevListener | out _first |
+| ------------- | --------- | ------------ | ------------ | ---------- |
+| 0             | null      | null         | 1            | 0          |
+| 1             | 0         | 0            | 2            | 1          |
+| 2             | 1         | 1            | 3            | 2          |
+| 3             | 2         | 2            | null         | 3          |
+
+
+
+###### 패딩이 있는 경우 update 함수 호출 순서 
+
+| listener id | nextListener | prevListener |
+| ----------- | ------------ | ------------ |
+| padding     | 3            | null         |
+| 3           | 2            | padding      |
+| 2           | 1            | 3            |
+| 1           | 0            | 2            |
+| 0           | null         | 1            |
+
+
+
+###### 패딩이 없는 경우 update 함수 호출 순서
+
+| listener id | nextListener | prevListener |
+| ----------- | ------------ | ------------ |
+| 3           | 2            | null         |
+| 2           | 1            | 3            |
+| 1           | 0            | 2            |
+| 0           | null         | 1            |
+
+패딩이 없으면 마지막에 등록된 리스너의 tick 함수는 호출되지 않습니다.
+
+
 
 ---
 
