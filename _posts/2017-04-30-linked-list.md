@@ -35,7 +35,7 @@ update 함수를 토글합니다. {true: 패딩과 함께 업데이트, false: �
 
 아래에 연결 리스트 생성 과정과 호출 순서를 표로 작성하였습니다
 
-[패딩이 없는 경우 update 함수 호출 순서](###### 패딩이 없는 경우 update 함수 호출 순서) 를 참고하세요.
+[패딩이 없는 경우 update 함수 호출 순서](#reason) 를 참고하세요.
 
 ###### _tickerListenerPaddings 생성과 연결 상태
 
@@ -66,7 +66,7 @@ update 함수를 토글합니다. {true: 패딩과 함께 업데이트, false: �
 | 1           | 0            | 2            |
 | 0           | null         | 1            |
 
-###### 패딩이 없는 경우 update 함수 호출 순서
+###### 패딩이 없는 경우 update 함수 호출 순서 <a id="reason"></a>
 
 | listener id | nextListener | prevListener |
 | ----------- | ------------ | ------------ |
