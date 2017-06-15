@@ -9,6 +9,7 @@ image2: /assets/images/dev/2017-04-30-linked-list/mobile.png
 ---
 
 연결 리스트 실 사용 예제를 소개합니다.
+BetweenAS3에서 하나의 ticker에 연결리스트를 활용하여 여러개의 리스너를 등록하고 호출하는 예제입니다.
 
 
 

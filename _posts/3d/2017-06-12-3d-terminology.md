@@ -8,7 +8,7 @@ image: /assets/images/dev/2017-03-11-start-jekyll/desktop.png
 image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
 ---
 
-3D 용어들을 나열하고 참조한 링크를 첨부합니다.
+3D 용어들을 이해하는데 참조한 링크들입니다. 
 
 
 
@@ -29,67 +29,67 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
 - [Inverse Matrix - Cofactor (여인수)](http://rfriend.tistory.com/143)
 
 - [Sarrus, Minor Determinant, Codfactor (사루스, 소행렬식, 여인수)](http://carstart.tistory.com/154)
-  - [소행렬식, 여인수, 행렬식, 전치행렬, 수반행렬, 역행렬 설명 비디오](http://www.youtubemusiclyrics.com/?id=CFa_MtkFEQc)
+  - [소행렬식, 여인수, 행렬식, 전치행렬, 수반행렬, 역행렬](http://www.youtubemusiclyrics.com/?id=CFa_MtkFEQc)
 
     - Adjoint Matrix (수반행렬) 
 
       - n차 정방행렬 A의 여인수행렬의 [전치행렬](http://ocw.kookmin.ac.kr/?course=390)을 수반행렬이라한다.
 
-      - $$
+      $$
         adj(A) = \begin{bmatrix} C_1\ _1& C_1\ _2 & C_1 \ _n \\ C_2 \ _1 & C_2 \ _2 & C_2 \ _n \\ C_m\ _1  & C_m \ _2 & C_m \ _n\end{bmatrix}^T
-        $$
+      $$
 
       - 역행렬 맛보기 (by [권태원 교수님](http://www.youtubemusiclyrics.com/?id=CFa_MtkFEQc))
 
         - 행렬 A가 아래값일 때
 
-        - $$
+        $$
           A = \begin{bmatrix} 2&3&-1 \\ 1&2&0\\ 4&2&1 \end{bmatrix}
-          $$
+        $$
 
         - A의 여인수행렬 계산과정은 아래와 같고
 
-        - $$
+        $$
           C_{1,1} = +\begin{bmatrix} 2 & 0 \\ 2 & 1\end{bmatrix}, C_{1,2} = -\begin{bmatrix} 1 & 0 \\ 4 & 1\end{bmatrix}, C_{1,3} = +\begin{bmatrix} 1 & 2 \\ 4 & 2 \end{bmatrix}
-          $$
+        $$
 
-          $$
+        $$
           C_{2,1} = -\begin{bmatrix} 3&-1 \\ 2&1 \end{bmatrix}, C_{2,2} = +\begin{bmatrix} 2&-1 \\ 4&1 \end{bmatrix}, C_{2,3} = -\begin{bmatrix} 2&3 \\ 4&2 \end{bmatrix}
-          $$
+        $$
 
-          $$
+        $$
           C_{3,1} = +\begin{bmatrix} 3&-1 \\ 2&0 \end{bmatrix}, C_{3,2} = -\begin{bmatrix} 2&-1 \\ 1&0 \end{bmatrix}, C_{3,3} = +\begin{bmatrix} 2&3 \\ 1&2 \end{bmatrix}
-          $$
+        $$
 
         - 아래가 결과입니다.
 
-        - $$
+        $$
           C_{i,j}= \begin{bmatrix} 2&-1&-6 \\ -5&6&8 \\ 2&-1&1 \end{bmatrix}
-          $$
+        $$
 
         - 계산된 여인수행렬의 전치행렬은 (수반행렬) 다음과 같습니다.
 
-        - $$
+        $$
           adj(A)  = \begin{bmatrix} 2&-5&2 \\ -1&6&-1 \\ -6&8&1 \end{bmatrix}
-          $$
+        $$
 
         - 행렬 A의 3열을 가지고 행렬식을 구하면 아래와 같습니다.
 
-        - $$
+        $$
           |A| = -1\begin{bmatrix} 1&2 \\ 4&2 \end{bmatrix} + 1\begin{bmatrix} 2&3 \\ 1&2 \end{bmatrix} = 6 + 1 = 7
-          $$
+        $$
 
         - 행렬A x 행렬식 역수값 x 수반행렬을 계산해보겠습니다.
 
-        - $$
+        $$
           {A} {1\over|A|}adj(A) = {1\over7}\begin{bmatrix}2&3&-1 \\ 1&2&0 \\ 4&2&1 \end{bmatrix}\begin{bmatrix}2&-5&2 \\ -1&6&-1 \\ -6&8&1 \end{bmatrix} = {1\over7}\begin{bmatrix}7&0&0\\0&7&0\\0&0&7\end{bmatrix}=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}
-          $$
+        $$
 
         - 행렬A 의 역행렬을 구하는 방법은 행렬식 역수값 x 수반행렬로 구할 수 있다.
 
-        - $$
+        $$
           A^{-1} = {1\over|A|}adj(A) = {1\over7}\begin{bmatrix}2&-5&2\\-1&6&-1\\-6&8&1\end{bmatrix}
-          $$
+        $$
 
           ​
 
@@ -125,7 +125,7 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
 
       - 위 식을 행렬로 변환하면 아래와 같습니다.
 
-      - $$
+        $$
         \begin{bmatrix} x' & y' \end{bmatrix} = \begin{bmatrix} x & y \end{bmatrix} \begin{bmatrix} a & 0 \\ 0 & b\end{bmatrix} = \begin{bmatrix} x * a & y * b\end{bmatrix}
         $$
 
