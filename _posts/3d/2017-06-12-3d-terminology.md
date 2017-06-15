@@ -4,11 +4,11 @@ title: 3D 용어 정리
 date: 2017-06-12 10:30:00
 categories: [3D]
 tags: [3D]
-image: /assets/images/2017-03-11-start-jekyll/desktop.png
-image2: /assets/images/2017-03-11-start-jekyll/mobile.png
+image: /assets/images/dev/2017-03-11-start-jekyll/desktop.png
+image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
 ---
 
-3D 관련 용어들을 나열하고 용어 참조한 링크를 정리합니다.
+3D 용어들을 나열하고 참조한 링크를 첨부합니다.
 
 
 
@@ -99,8 +99,6 @@ image2: /assets/images/2017-03-11-start-jekyll/mobile.png
     Ax=B의 식을 A:B 매트릭스로 바꿔 푸는데, A의 inverse가 존재하지 않으면
     x값을 구할수가 없겠죠. 그런데 Det가 0이면 inverse가 존재하지 않습니다.
     x의 값이 0인 경우를 제외하구요. 따라서 Det=0이면 해가 존재하지 않는다는 명제도 참이되죠.
-
-- - ​
 
 - @ 역행렬
 

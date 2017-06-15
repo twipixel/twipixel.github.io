@@ -4,8 +4,8 @@ title: Linked List (연결 리스트)
 date: 2017-04-30 01:00:00
 categories: [개발이야기]
 tags: [LINKED LIST, 연결 리스트, JS, JAVASCRIPT, 자바스크립트]
-image: /assets/images/2017-04-30-linked-list/desktop.png
-image2: /assets/images/2017-04-30-linked-list/mobile.png
+image: /assets/images/dev/2017-04-30-linked-list/desktop.png
+image2: /assets/images/dev/2017-04-30-linked-list/mobile.png
 ---
 
 연결 리스트 실 사용 예제를 소개합니다.
