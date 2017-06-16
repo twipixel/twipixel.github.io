@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 3D 용어 정리
+title: 3D 용어
 date: 2017-06-12 10:30:00
 categories: [3D]
 tags: [3D]
@@ -142,7 +142,6 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
 
     - 이동 변환 translation(tx, ty)
 
-    ​
     $$
     \begin{bmatrix} 1&0&0 \\ 0&1&0 \\ 5&10&1\end{bmatrix}
     $$
@@ -183,7 +182,7 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
     x' = 2x \\ y' = y
     $$
 
-    ![scale](./../../assets/images/3d/2017-06-23-3d-terminology/scale.png)
+    ![scale]({{site.url}}/assets/images/3d/2017-06-23-3d-terminology/scale.png)
 
     - 회전 변환 rotation(q)
 
@@ -203,7 +202,7 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
     실제 좌표 (4, 0) 을 주고 rotation 30도를 시키면 결과값은 (3.5, 2) 가 나옵니다.
     $$
 
-    ![given-point](./../../assets/images/3d/2017-06-23-3d-terminology/given-point.png)
+    ![given-point]({{site.url}}/assets/images/3d/2017-06-23-3d-terminology/given-point.png)
     $$
     x' = 0.87 * 4 - 0.5 * 0 \\ y' = 0.5 * 4 + 0.87 * 0
     $$
@@ -238,7 +237,7 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
     x' = x + y \\ y' = y
     $$
 
-    ![shear](./../../assets/images/3d/2017-06-23-3d-terminology/shear.png)
+    ![shear]({{site.url}}/assets/images/3d/2017-06-23-3d-terminology/shear.png)
 
     - 코드 적용
 
@@ -315,7 +314,7 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
   - @[회전 행렬의 유도](https://o-tantk.github.io/posts/derive-rotation-matrix/)
 
 
-  - [3D 이동, 크기, 회전에 대한 정리](https://www.youtube.com/watch?v=7MVNKxIV3pI)
+- [3D 이동, 크기, 회전에 대한 정리](https://www.youtube.com/watch?v=7MVNKxIV3pI)
   - @[Quaternion (사원수)](https://www.youtube.com/watch?v=gCuOJ_vuSfY)
 
 - [이동과 회전 그리고 확대 및 축소 행렬의 결합 순서](http://blog.naver.com/PostView.nhn?blogId=atom723&logNo=190306668&categoryNo=12&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=&from=postList&userTopListOpen=true&userTopListCount=5&userTopListManageOpen=false&userTopListCurrentPage=1)
@@ -324,7 +323,7 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
     - [회전은 z -> x -> y 순으로 결합합니다.](https://www.youtube.com/watch?v=7MVNKxIV3pI)
 
 
-  - [특정점을 중심으로 물체를 회전 시키고자 할때](https://gamedev.stackexchange.com/questions/16719/what-is-the-correct-order-to-multiply-scale-rotation-and-translation-matrices-f)
+- [특정점을 중심으로 물체를 회전 시키고자 할때](https://gamedev.stackexchange.com/questions/16719/what-is-the-correct-order-to-multiply-scale-rotation-and-translation-matrices-f)
 
     - Scale x Translate X Rotation x Object Translation
 
