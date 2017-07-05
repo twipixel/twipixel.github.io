@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 3D 용어 정리
+title: 3D 용어
 date: 2017-06-12 10:30:00
 categories: [3D]
 tags: [3D]
@@ -166,7 +166,6 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
 
     - 이동 변환 translation(tx, ty)
 
-    ​
     $$
     \begin{bmatrix} 1&0&0 \\ 0&1&0 \\ 5&10&1\end{bmatrix}
     $$
@@ -207,7 +206,7 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
     x' = 2x \\ y' = y
     $$
 
-    ![scale](./../../assets/images/3d/2017-06-23-3d-terminology/scale.png)
+    ![scale]({{site.url}}/assets/images/3d/2017-06-23-3d-terminology/scale.png){: .align-center}
 
     - 회전 변환 rotation(q)
 
@@ -227,7 +226,7 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
     실제 좌표 (4, 0) 을 주고 rotation 30도를 시키면 결과값은 (3.5, 2) 가 나옵니다.
     $$
 
-    ![given-point](./../../assets/images/3d/2017-06-23-3d-terminology/given-point.png)
+    ![given-point]({{site.url}}/assets/images/3d/2017-06-23-3d-terminology/given-point.png){: .align-center}
     $$
     x' = 0.87 * 4 - 0.5 * 0 \\ y' = 0.5 * 4 + 0.87 * 0
     $$
@@ -262,7 +261,7 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
     x' = x + y \\ y' = y
     $$
 
-    ![shear](./../../assets/images/3d/2017-06-23-3d-terminology/shear.png)
+    ![shear]({{site.url}}/assets/images/3d/2017-06-23-3d-terminology/shear.png){: .align-center}
 
     - 코드 적용
 

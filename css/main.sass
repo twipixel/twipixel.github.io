@@ -724,6 +724,54 @@ a.footnote
     &.w308
       max-width: 308px
 
+
+// 아래는 이미지 정렬 속성 입니다.
+// ![left-aligned-image](image.jpg){: .align-left}
+// ![center-aligned-image](image.jpg){: .align-center}
+// ![right-aligned-image](image.jpg){: .align-right}
+// https://mmistakes.github.io/jekyll-theme-basically-basic/markup/markup-image-alignment/
+
+.align-baseline
+  vertical-align: baseline !important
+
+.align-top
+  vertical-align: top !important
+
+.align-middle
+  vertical-align: middle !important
+
+.align-bottom
+  vertical-align: bottom !important
+
+.align-text-bottom
+  vertical-align: text-bottom !important
+
+.align-text-top
+  vertical-align: text-top !important
+
+.align-center,div.align-center,a img.align-center
+  display: block
+  margin-right: auto
+  margin-left: auto
+
+figure.align-center img
+  display: block
+  margin-right: auto
+  margin-left: auto
+
+figure.align-center figcaption
+  text-align: center
+
+.align-right,a img.align-right
+  margin-bottom: 1rem
+  margin-left: 1rem
+  float: right
+
+.align-left,a img.align-left
+  margin-right: 1rem
+  margin-bottom: 1rem
+  float: left
+
 ::selection
   color: #fff
   background: #ec0101
