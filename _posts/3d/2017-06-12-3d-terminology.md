@@ -36,15 +36,15 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
 
     - n차 정방행렬 A의 i행과 j열을 뺀 부분행렬의 행렬식을
       행렬 A의 원소 Aij의 소행렬식이라 하고 Mij로 표시한다.
-      ​
-      ![소행렬식](./../../assets/images/3d/2017-06-23-3d-terminology/minor-determinant.gif)
+      
+      ​![소행렬식]({{site.url}}assets/images/3d/2017-06-23-3d-terminology/minor-determinant.gif){: .align-center}
       ​
 
   - 여인수 (Cofactor)
 
     - 소행렬식에 부호를 붙힌 것 (i행과 j열 일 때 ij의 합이 짝수일 때 +, 홀수일 때 -)
 
-      ![여인수](./../../assets/images/3d/2017-06-23-3d-terminology/cofactor.png)
+      ​![여인수]({{site.url}}assets/images/3d/2017-06-23-3d-terminology/cofactor.png){: .align-center}
       ​
 
   - 행렬식 (Determinant)
@@ -52,8 +52,7 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
     - n차 정방행렬 A = [Aij]의 행렬식은 하나의 특정 행(or 열)의 원소에
       그 원소에 대응하는 여인수를 곱한 합으로 정의하고 |A| = det(A)로 표시한다. 
       ​
-
-      ![행렬식](./../../assets/images/3d/2017-06-23-3d-terminology/minor-determinant.gif)
+      ​![행렬식]({{site.url}}assets/images/3d/2017-06-23-3d-terminology/minor-determinant.gif){: .align-center}
       ​
 
 - 수반행렬 (Adjoint Matrix )
@@ -360,9 +359,6 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
 - @ [View Transform, Projection Transform (뷰변환, 투영변환)](http://blog.naver.com/PostView.nhn?blogId=atom723&logNo=190303552&categoryNo=12&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postList&userTopListOpen=true&userTopListCount=5&userTopListManageOpen=false&userTopListCurrentPage=1)
 
 
-<br>
-
-<br>
 
 ##### 이미지 출처
 
