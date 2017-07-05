@@ -32,7 +32,31 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
 
 - [소행렬식, 여인수, 행렬식, 전치행렬, 수반행렬, 역행렬](http://www.youtubemusiclyrics.com/?id=CFa_MtkFEQc)
 
-- Adjoint Matrix (수반행렬) 
+  - 소행렬식 (Minor Determinant)
+
+    - n차 정방행렬 A의 i행과 j열을 뺀 부분행렬의 행렬식을
+      행렬 A의 원소 Aij의 소행렬식이라 하고 Mij로 표시한다.
+      ​
+      ![소행렬식](./../../assets/images/3d/2017-06-23-3d-terminology/minor-determinant.gif)
+      ​
+
+  - 여인수 (Cofactor)
+
+    - 소행렬식에 부호를 붙힌 것 (i행과 j열 일 때 ij의 합이 짝수일 때 +, 홀수일 때 -)
+
+      ![여인수](./../../assets/images/3d/2017-06-23-3d-terminology/cofactor.png)
+      ​
+
+  - 행렬식 (Determinant)
+
+    - n차 정방행렬 A = [Aij]의 행렬식은 하나의 특정 행(or 열)의 원소에
+      그 원소에 대응하는 여인수를 곱한 합으로 정의하고 |A| = det(A)로 표시한다. 
+      ​
+
+      ![행렬식](./../../assets/images/3d/2017-06-23-3d-terminology/minor-determinant.gif)
+      ​
+
+- 수반행렬 (Adjoint Matrix )
 
   - n차 정방행렬 A의 여인수행렬의 [전치행렬](http://ocw.kookmin.ac.kr/?course=390)을 수반행렬이라한다.
 
@@ -51,7 +75,7 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
   - A의 여인수행렬 계산과정은 아래와 같고
 
   $$
-    C_{1,1} = +\begin{bmatrix} 2 & 0 \\ 2 & 1\end{bmatrix}, C_{1,2} = -\begin{bmatrix} 1 & 0 \\ 4 & 1\end{bmatrix}, C_{1,3} = +\begin{bmatrix} 1 & 2 \\ 4 & 2 \end{bmatrix}
+  C_{1,1} = +\begin{bmatrix} 2 & 0 \\ 2 & 1\end{bmatrix}, C_{1,2} = -\begin{bmatrix} 1 & 0 \\ 4 & 1\end{bmatrix}, C_{1,3} = +\begin{bmatrix} 1 & 2 \\ 4 & 2 \end{bmatrix}
   $$
 
   $$
@@ -108,7 +132,7 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
     Ax=B의 식을 A:B 매트릭스로 바꿔 푸는데, 
     A의 inverse가 존재하지 않으면 x값을 구할수가 없습니다. 
     그런데 Det가 0이면 inverse가 존재하지 않습니다. x의 값이 0인 경우를 제외하구요. 
-    따라서 Det=0이면 해가 존재하지 않는다는 명제도 참이되죠.
+    따라서 Det=0이면 해가 존재하지 않는다는 명제도 참이됩니다.
 
   ​
 
@@ -315,7 +339,7 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
   - @[회전 행렬의 유도](https://o-tantk.github.io/posts/derive-rotation-matrix/)
 
 
-  - [3D 이동, 크기, 회전에 대한 정리](https://www.youtube.com/watch?v=7MVNKxIV3pI)
+- [3D 이동, 크기, 회전에 대한 정리](https://www.youtube.com/watch?v=7MVNKxIV3pI)
   - @[Quaternion (사원수)](https://www.youtube.com/watch?v=gCuOJ_vuSfY)
 
 - [이동과 회전 그리고 확대 및 축소 행렬의 결합 순서](http://blog.naver.com/PostView.nhn?blogId=atom723&logNo=190306668&categoryNo=12&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=&from=postList&userTopListOpen=true&userTopListCount=5&userTopListManageOpen=false&userTopListCurrentPage=1)
@@ -324,7 +348,7 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
     - [회전은 z -> x -> y 순으로 결합합니다.](https://www.youtube.com/watch?v=7MVNKxIV3pI)
 
 
-  - [특정점을 중심으로 물체를 회전 시키고자 할때](https://gamedev.stackexchange.com/questions/16719/what-is-the-correct-order-to-multiply-scale-rotation-and-translation-matrices-f)
+- [특정점을 중심으로 물체를 회전 시키고자 할때](https://gamedev.stackexchange.com/questions/16719/what-is-the-correct-order-to-multiply-scale-rotation-and-translation-matrices-f)
 
     - Scale x Translate X Rotation x Object Translation
 
@@ -336,3 +360,13 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
 - [World, View, Projection Matrix](http://web.archive.org/web/20131222170415/http:/robertokoci.com/world-view-projection-matrix-unveiled/)
 - @ [View Transform, Projection Transform (뷰변환, 투영변환)](http://blog.naver.com/PostView.nhn?blogId=atom723&logNo=190303552&categoryNo=12&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postList&userTopListOpen=true&userTopListCount=5&userTopListManageOpen=false&userTopListCurrentPage=1)
 
+
+<br>
+
+<br>
+
+##### 이미지 출처
+
+- [소행렬식](https://www.cliffsnotes.com/study-guides/algebra/linear-algebra/the-determinant/laplace-expansions-for-the-determinant)
+- [여인수](http://thejuniverse.org/PUBLIC/LinearAlgebra/LOLA/laplace/minor.html)
+- [행렬식](https://www.cliffsnotes.com/study-guides/algebra/algebra-ii/linear-equations-in-three-variables/linear-equations-solutions-using-determinants-with-three-variables)
