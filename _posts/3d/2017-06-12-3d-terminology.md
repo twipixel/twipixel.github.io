@@ -36,7 +36,7 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
 
     - n차 정방행렬 A의 i행과 j열을 뺀 부분행렬의 행렬식을
       행렬 A의 원소 Aij의 소행렬식이라 하고 Mij로 표시한다.
-      
+
       ​![소행렬식]({{site.url}}/assets/images/3d/2017-06-23-3d-terminology/minor-determinant.gif){: .align-center}
       ​
 
@@ -44,7 +44,7 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
 
     - 소행렬식에 부호를 붙힌 것 (i행과 j열 일 때 ij의 합이 짝수일 때 +, 홀수일 때 -)
 
-      ​![여인수]({{site.url}}/assets/images/3d/2017-06-23-3d-terminology/cofactor.png){: .align-center}
+      ![여인수 부호]({{site.url}}/assets/images/3d/2017-06-23-3d-terminology/cofactor.png){: .align-center}
       ​
 
   - 행렬식 (Determinant)
@@ -94,13 +94,13 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
   - 계산된 여인수행렬의 전치행렬은 (수반행렬) 다음과 같습니다.
 
   $$
-    adj(A)  = \begin{bmatrix} 2&-5&2 \\ -1&6&-1 \\ -6&8&1 \end{bmatrix}
+  adj(A)  = \begin{bmatrix} 2&-5&2 \\ -1&6&-1 \\ -6&8&1 \end{bmatrix}
   $$
 
   - 행렬 A의 3열을 가지고 행렬식을 구하면 아래와 같습니다.
 
   $$
-    |A| = -1\begin{bmatrix} 1&2 \\ 4&2 \end{bmatrix} + 1\begin{bmatrix} 2&3 \\ 1&2 \end{bmatrix} = 6 + 1 = 7
+  \begin{bmatrix} 2&3&-1 \\ 1&2&0\\ 4&2&1 \end{bmatrix} = -1\begin{bmatrix} 1&2 \\ 4&2 \end{bmatrix} + 1\begin{bmatrix} 2&3 \\ 1&2 \end{bmatrix} = 6 + 1 = 7
   $$
 
   - 행렬A x 행렬식 역수값 x 수반행렬을 계산해보겠습니다.
@@ -130,7 +130,7 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
   - 선형대수에서 해를 구한다는 건
     Ax=B의 식을 A:B 매트릭스로 바꿔 푸는데, 
     A의 inverse가 존재하지 않으면 x값을 구할수가 없습니다. 
-    그런데 Det가 0이면 inverse가 존재하지 않습니다. x의 값이 0인 경우를 제외하구요. 
+    그런데 Det가 0이면 inverse가 존재하지 않습니다. (x의 값이 0인 경우 제외)
     따라서 Det=0이면 해가 존재하지 않는다는 명제도 참이됩니다.
 
   ​
@@ -205,7 +205,7 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
     x' = 2x \\ y' = y
     $$
 
-    ![scale]({{site.url}}/assets/images/3d/2017-06-23-3d-terminology/scale.png){: .align-center}
+    ![]({{site.url}}/assets/images/3d/2017-06-23-3d-terminology/scale.png){: .align-center}
 
     - 회전 변환 rotation(q)
 
@@ -225,7 +225,7 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
     실제 좌표 (4, 0) 을 주고 rotation 30도를 시키면 결과값은 (3.5, 2) 가 나옵니다.
     $$
 
-    ![given-point]({{site.url}}/assets/images/3d/2017-06-23-3d-terminology/given-point.png){: .align-center}
+    ![]({{site.url}}/assets/images/3d/2017-06-23-3d-terminology/given-point.png){: .align-center}
     $$
     x' = 0.87 * 4 - 0.5 * 0 \\ y' = 0.5 * 4 + 0.87 * 0
     $$
@@ -260,7 +260,7 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
     x' = x + y \\ y' = y
     $$
 
-    ![shear]({{site.url}}/assets/images/3d/2017-06-23-3d-terminology/shear.png){: .align-center}
+    ![]({{site.url}}/assets/images/3d/2017-06-23-3d-terminology/shear.png){: .align-center}
 
     - 코드 적용
 
@@ -357,6 +357,8 @@ image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
 
 - [World, View, Projection Matrix](http://web.archive.org/web/20131222170415/http:/robertokoci.com/world-view-projection-matrix-unveiled/)
 - @ [View Transform, Projection Transform (뷰변환, 투영변환)](http://blog.naver.com/PostView.nhn?blogId=atom723&logNo=190303552&categoryNo=12&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postList&userTopListOpen=true&userTopListCount=5&userTopListManageOpen=false&userTopListCurrentPage=1)
+
+
 
 
 
