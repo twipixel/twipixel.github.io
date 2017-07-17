@@ -29,9 +29,11 @@ Chapter  01
 
   ​
 
-#### 스칼라 (Scalar)
+#### [스칼라 (Scalar)](http://mrw0119.tistory.com/11)
 
 좌표 변환에 의존하지 않는 물리량이다. '방향을 가지고 있지 않고 크기만 가지고 있는 물리량'
+
+크기만을 가지는 물리량. 우리가 계산할 때 사용하는 숫자들이 스칼라라고 할 수 있다.
 
 
 
@@ -53,3 +55,9 @@ Chapter  01
 #### [실벡터 공간 (Real Vector Space)](http://lifeisforu.tistory.com/36)
 
 Vector space 라는 것은 vector 들의 집합으로 구성된 수학적 구조를 의미하며, 각 vector 들은 서로 더해지거나 scalar 라고 불리는 수를 곱해 scaling 될 수 있다. 보통 그 scalar 값은 실수이지만, 복소수나 유리수일 수도 있다. 실벡터 공간은 실수를 사용해 구성된 공간을 의미한다.
+
+
+
+#### [내적 (Dot Product, Scalar Product, Inner Product)](http://rfriend.tistory.com/145)
+
+- 내적을 활용한 두 벡터의 각도 계산 (jsfiddle)
