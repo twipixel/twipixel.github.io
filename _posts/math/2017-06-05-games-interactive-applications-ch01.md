@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 게임 & 인터랙티브 애플리케이션을 위한 수학 챕터 01
+title: 게임 & 인터랙티브 애플리케이션을 위한 수학
 date: 2017-06-05 09:20:00
 categories: [수학]
 tags: [수학]
@@ -8,7 +8,7 @@ image: /assets/images/dev/2017-03-11-start-jekyll/desktop.png
 image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
 ---
 
-Chapter  01
+책에 나오는 용어들을 정리하고 있습니다.
 
 
 

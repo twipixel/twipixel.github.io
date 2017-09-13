@@ -8,7 +8,7 @@ image: /assets/images/dev/2017-03-11-start-jekyll/desktop.png
 image2: /assets/images/dev/2017-03-11-start-jekyll/mobile.png
 ---
 
-3D 용어들을 이해하는데 참조한 링크들입니다. 
+3D 용어들을 정리하고 있습니다.
 
 
 
