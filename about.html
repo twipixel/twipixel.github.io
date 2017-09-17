@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ABOUT</title>
+    <script src="./library/pixi.min.js"></script>
+    <script src="./library/animation.js"></script>
+    <style type="text/css">
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #673AB7;
+        }
+
+        #canvas {
+            margin: 0px;
+            width: 100%;
+            height: 100%;
+            background-color: 'rgba(158, 167, 184, 0.2)'';
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="root">
+    <canvas id="canvas"></canvas>
+</div>
+
+<script>
+window.onload = initailize.bind(this);
+window.onresize = resize.bind(this);
+
+var canvas, renderer, stage;
+
+function initailize() {
+    canvas = document.getElementById('canvas');
+
+    renderer = new PIXI.CanvasRenderer(canvas.width, canvas.height, {
+        view: canvas,
+        autoResize: true,
+        antialias: true,
+        backgroundColor: 0x673AB7
+    });
+
+    stage = new PIXI.Container();
+
+
+
+
+    startApplication();
+//    resize();
+//    updateLoop();
+}
+
+
+function startApplication() {
+
+    console.log('startApplication');
+
+//    var sprite = new PIXI.Sprite();
+//    sprite.on('mousedown', onMouseDown.bind(this));
+//    sprite.on('mousemove', onMouseMove.bind(this));
+//    sprite.on('mouseup', onMouseUp.bind(this));
+//    stage.addChild(sprite);
+
+//    var g = new PIXI.Graphics();
+//    g.lineStyle(0xff3300);
+//    g.beginFill(0xff3300);
+//    g.drawRect(50, 50, 100, 100);
+//    g.endFill();
+//    stage.addChild(g);
+}
+
+
+function onMouseDown(event) {
+    console.log(event.globalX, event.globalY);
+}
+
+
+function onMouseMove(event) {
+    console.log(event.globalX, event.globalY);
+}
+
+
+function onMouseUp(event) {
+    console.log(event.globalX, event.globalY);
+}
+
+
+function resize() {
+//    const width = window.innerWidth * window.devicePixelRatio;
+//    const height = window.innerHeight * window.devicePixelRatio;
+//    canvas.width = width;
+//    canvas.height = height;
+//    canvas.style.width = width + 'px';
+//    canvas.style.height = height + 'px';
+//    renderer.resize(width, height);
+}
+
+
+function updateLoop (ms) {
+    update(ms);
+    requestAnimFrame(updateLoop.bind(this));
+}
+
+
+function update(ms) {
+    console.log('udpate');
+    renderer.render(stage);
+}
+
+
+
+</script>
+
+</body>
+</html>
