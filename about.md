@@ -4,14 +4,28 @@ title: About
 permalink: /about/
 ---
 
-A medium inspired Jekyll blog theme. The basic idea came from the Ghost theme 
-[Readium 2.0](http://www.svenread.com/readium-ghost-theme/). I use mediator on my own blog [The Base](blog.base68.com).
+## Naver NewsLibrary Flash to Canvas
 
-You can **download** the theme here:
-[https://github.com/dirkfabisch/mediator](https://github.com/dirkfabisch/mediator) 
+![뉴스라이브러리]({{site.url}}/assets/images/about/NewsLibrary.png){: .align-center}
 
-You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+###### DESCRIPTION
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+기존의 Flash 컨텐츠를 Canvas로 변환한 작업입니다. 대부분 UI들은 HTML로 처리하고 Interaction 요소들만 Canvas 로 대처하였습니다.  PixiJS를 이용하면 Flash와 유사하게 개발 가능합니다. 고려사항은 마우스 이벤트에 bubble이 없어 구조 변경이 필요하고 필터 사용에 제약이 있어 스펙 조정이 필요합니다.
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+###### ROLE
+
+- 뉴스라이브러리 팝업 뷰어 메인
+- 뉴스라이브러리 이미지형 뷰어 변환
+
+
+
+
+
+
+
+
+
+
+
+
+
