@@ -3,22 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>ABOUT</title>
-    <script src="./library/pixi.min.js"></script>
-    <script src="./library/animation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.5.5/pixi.min.js"></script>
+    <script>
+        (function () {
+            //Request animation polyfill - http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
+            requestAnimFrame = (function () {
+                return window.requestAnimationFrame ||
+                    window.webkitRequestAnimationFrame ||
+                    window.mozRequestAnimationFrame ||
+                    window.oRequestAnimationFrame ||
+                    window.msRequestAnimationFrame ||
+                    function (callback) {
+                        return window.setTimeout(callback, 1000 / 60);
+                    };
+            })();
+
+            cancelAnimFrame = (function () {
+                return window.cancelAnimationFrame ||
+                    window.webkitCancelAnimationFrame ||
+                    window.mozCancelAnimationFrame ||
+                    window.oCancelAnimationFrame ||
+                    window.msCancelAnimationFrame ||
+                    function (callback) {
+                        return window.clearTimeout(callback, 1000 / 60);
+                    };
+            })();
+        })();
+    </script>
     <style type="text/css">
 
         body {
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background-color: #673AB7;
+            background-color: #3498db;
         }
 
         #canvas {
             margin: 0px;
             width: 100%;
             height: 100%;
-            background-color: 'rgba(158, 167, 184, 0.2)'';
+            background-color: #3498db;
         }
 
     </style>
@@ -30,88 +55,296 @@
 </div>
 
 <script>
-window.onload = initailize.bind(this);
-window.onresize = resize.bind(this);
+    var HEADER_MOVE_LINE = 'm';
+    var HEADER_DRAW_LINE = 'd';
+    var DRAW_VO_SEPERATOR = '|';
 
-var canvas, renderer, stage;
+    var smileData0 = 'm694.00|281.00,d692.00|281.00,d689.00|281.00,d687.00|281.00,d684.00|281.00,d681.00|281.00,d678.00|281.00,d675.00|282.00,d671.00|283.00,d667.00|284.00,d663.00|285.00,d659.00|286.00,d656.00|287.00,d652.00|289.00,d648.00|290.00,d644.00|292.00,d641.00|294.00,d638.00|296.00,d635.00|298.00,d632.00|300.00,d629.00|303.00,d627.00|306.00,d625.00|308.00,d622.00|312.00,d620.00|314.00,d619.00|317.00,d617.00|320.00,d616.00|323.00,d615.00|326.00,d615.00|329.00,d614.00|331.00,d614.00|334.00,d614.00|337.00,d614.00|340.00,d614.00|342.00,d614.00|344.00,d614.00|347.00,d615.00|349.00,d615.00|351.00,d616.00|353.00,d617.00|356.00,d618.00|358.00,d619.00|360.00,d620.00|362.00,d621.00|364.00,d622.00|366.00,d624.00|368.00,d625.00|370.00,d627.00|372.00,d629.00|376.00,d630.00|378.00,d632.00|380.00,d634.00|382.00,d636.00|384.00,d638.00|386.00,d640.00|387.00,d643.00|389.00,d645.00|390.00,d647.00|392.00,d650.00|393.00,d654.00|394.00,d658.00|396.00,d662.00|397.00,d666.00|398.00,d670.00|399.00,d675.00|399.00,d680.00|399.00,d685.00|399.00,d690.00|399.00,d695.00|399.00,d700.00|398.00,d705.00|396.00,d709.00|394.00,d713.00|392.00,d716.00|389.00,d720.00|385.00,d724.00|380.00,d727.00|376.00,d730.00|371.00,d733.00|366.00,d735.00|360.00,d737.00|354.00,d737.00|348.00,d738.00|342.00,d738.00|335.00,d738.00|331.00,d738.00|326.00,d738.00|321.00,d737.00|317.00,d735.00|313.00,d733.00|309.00,d731.00|306.00,d730.00|303.00,d728.00|300.00,d726.00|297.00,d724.00|295.00,d722.00|292.00,d720.00|290.00,d717.00|288.00,d715.00|287.00,d712.00|286.00,d710.00|284.00,d707.00|283.00,d705.00|283.00,d703.00|282.00,d701.00|282.00,d698.00|281.00,d696.00|281.00,d693.00|281.00,d691.00|281.00,d690.00|281.00,d689.00|281.00,d688.00|280.00,m649.00|305.00,d648.00|306.00,d647.00|309.00,d646.00|312.00,d645.00|316.00,d645.00|319.00,d645.00|322.00,d645.00|325.00,d645.00|327.00,d645.00|328.00,m697.00|308.00,d698.00|309.00,d699.00|313.00,d701.00|316.00,d703.00|319.00,d703.00|322.00,d704.00|324.00,d704.00|325.00,d704.00|326.00,m638.00|344.00,d638.00|345.00,d640.00|346.00,d642.00|348.00,d644.00|350.00,d647.00|352.00,d649.00|353.00,d652.00|355.00,d655.00|357.00,d659.00|358.00,d663.00|360.00,d666.00|361.00,d671.00|361.00,d675.00|361.00,d679.00|361.00,d684.00|360.00,d689.00|357.00,d694.00|354.00,d698.00|350.00,d702.00|347.00,d705.00|344.00,d707.00|341.00,d708.00|339.00,d708.00|338.00,d707.00|338.00,d703.00|338.00,d697.00|340.00,d689.00|341.00,d680.00|343.00,d672.00|344.00,d665.00|345.00,d658.00|345.00,d652.00|345.00,d649.00|346.00,d647.00|346.00,d646.00|346.00,d645.00|346.00,d644.00|346.00,m641.00|392.00,d640.00|392.00,d640.00|393.00,d639.00|395.00,d638.00|397.00,d637.00|400.00,d635.00|405.00,d632.00|414.00,d629.00|424.00,d626.00|435.00,d622.00|446.00,d618.00|459.00,d615.00|474.00,d613.00|487.00,d611.00|497.00,d611.00|503.00,d611.00|506.00,m712.00|396.00,d713.00|398.00,d715.00|408.00,d719.00|421.00,d723.00|438.00,d728.00|454.00,d733.00|471.00,d738.00|487.00,d741.00|500.00,d743.00|508.00,d744.00|511.00,m581.00|429.00,d584.00|431.00,d592.00|432.00,d609.00|433.00,d635.00|433.00,d665.00|433.00,d699.00|432.00,d735.00|433.00,d767.00|436.00,d793.00|438.00,d810.00|439.00,d821.00|441.00,d827.00|443.00,d828.00|445.00,d829.00|447.00,d830.00|450.00,d830.00|454.00,d831.00|460.00,d832.00|472.00,d832.00|487.00,d832.00|503.00,d832.00|523.00,d832.00|542.00,d832.00|560.00,d832.00|578.00,d831.00|593.00,d830.00|605.00,d828.00|616.00,d826.00|624.00,d824.00|629.00,d822.00|633.00,d820.00|635.00,d818.00|636.00,d815.00|637.00,d809.00|637.00,d798.00|635.00,d782.00|634.00,d761.00|632.00,d737.00|629.00,d707.00|625.00,d678.00|622.00,d652.00|621.00,d626.00|618.00,d603.00|615.00,d586.00|613.00,d575.00|612.00,d568.00|611.00,d563.00|609.00,d559.00|608.00,d555.00|607.00,d550.00|605.00,d544.00|604.00,d537.00|603.00,d529.00|603.00,d522.00|603.00,d516.00|603.00,d512.00|603.00,d511.00|602.00,d510.00|602.00,d510.00|601.00,d510.00|596.00,d510.00|589.00,d511.00|577.00,d515.00|561.00,d519.00|541.00,d524.00|518.00,d529.00|495.00,d533.00|475.00,d537.00|463.00,d542.00|454.00,d546.00|447.00,d549.00|443.00,d551.00|440.00,d552.00|438.00,d553.00|437.00,d555.00|436.00,d556.00|435.00,d558.00|434.00,d561.00|433.00,d564.00|433.00,d567.00|432.00,d571.00|432.00,d574.00|432.00,d577.00|432.00,d578.00|432.00,d579.00|432.00,d580.00|432.00,d581.00|432.00,d583.00|432.00,d587.00|433.00,d592.00|434.00,d596.00|435.00,m594.00|503.00,d593.00|502.00,d587.00|502.00,d580.00|505.00,d572.00|512.00,d565.00|523.00,d559.00|533.00,d556.00|541.00,d556.00|547.00,d559.00|550.00,d565.00|553.00,d572.00|553.00,d580.00|553.00,d587.00|550.00,m612.00|478.00,d611.00|478.00,d609.00|479.00,d608.00|484.00,d608.00|495.00,d608.00|509.00,d608.00|523.00,d608.00|536.00,d608.00|543.00,d608.00|548.00,d608.00|549.00,m638.00|534.00,d638.00|539.00,d639.00|546.00,d639.00|550.00,d639.00|552.00,m623.00|511.00,d629.00|511.00,d638.00|513.00,d649.00|514.00,d660.00|515.00,d668.00|516.00,d671.00|517.00,d672.00|518.00,d672.00|522.00,d670.00|528.00,d668.00|535.00,d666.00|541.00,d666.00|547.00,d668.00|554.00,d671.00|560.00,d677.00|564.00,d683.00|565.00,d691.00|562.00,m710.00|495.00,d710.00|499.00,d712.00|508.00,d714.00|522.00,d715.00|538.00,d715.00|549.00,d715.00|554.00,d715.00|557.00,m740.00|526.00,d738.00|526.00,d734.00|527.00,d730.00|530.00,d727.00|536.00,d724.00|542.00,d724.00|547.00,d725.00|551.00,d730.00|554.00,d739.00|557.00,d742.00|557.00@495.5,241.5,401,401';
 
-function initailize() {
-    canvas = document.getElementById('canvas');
+    var canvas, renderer, stage, mouse,
+    drawData, drawIndex, drawTotal,
+    lineThickness = 4, lineColor = 0xFFFFFF,
+    canvasWidth = 400, canvasHeight = 400;
 
-    renderer = new PIXI.CanvasRenderer(canvas.width, canvas.height, {
-        view: canvas,
-        autoResize: true,
-        antialias: true,
-        backgroundColor: 0x673AB7
-    });
+    window.onload = initailize.bind(this);
+    window.onresize = resizeWindow.bind(this);
+    window.document.addEventListener('keyup', onKeyUp.bind(this));
 
-    stage = new PIXI.Container();
+    function initailize() {
+        canvas = document.getElementById('canvas');
 
-
-
-
-    startApplication();
-//    resize();
-//    updateLoop();
-}
-
-
-function startApplication() {
-
-    console.log('startApplication');
-
-//    var sprite = new PIXI.Sprite();
-//    sprite.on('mousedown', onMouseDown.bind(this));
-//    sprite.on('mousemove', onMouseMove.bind(this));
-//    sprite.on('mouseup', onMouseUp.bind(this));
-//    stage.addChild(sprite);
-
-//    var g = new PIXI.Graphics();
-//    g.lineStyle(0xff3300);
-//    g.beginFill(0xff3300);
-//    g.drawRect(50, 50, 100, 100);
-//    g.endFill();
-//    stage.addChild(g);
-}
+        renderer = new PIXI.CanvasRenderer(canvas.width, canvas.height, {
+            view: canvas,
+            autoResize: true,
+            backgroundColor: 0x3498db
+        });
 
 
-function onMouseDown(event) {
-    console.log(event.globalX, event.globalY);
-}
+        mouse = renderer.plugins.interaction.mouse;
+        stage = new PIXI.Container();
+
+        updateLoop();
+        resizeWindow();
+        startApplication();
+    }
 
 
-function onMouseMove(event) {
-    console.log(event.globalX, event.globalY);
-}
+    function startApplication() {
+        drawData = [];
+
+        //setDrawMode.call(this);
+        setRestoreMode.call(this);
+
+        var center = getCenterPosition();
+        this.guideLineSprite = new PIXI.Sprite();
+        this.guideLineSprite.x = center.x - canvasWidth / 2;
+        this.guideLineSprite.y = center.y - canvasHeight / 2;
+        stage.addChild(this.guideLineSprite);
+
+        this.guideLine = new PIXI.Graphics();
+        this.guideLine.lineStyle(1, 0xFFFFFF);
+        this.guideLine.drawRect(0, 0, canvasWidth, canvasHeight);
+        this.guideLine.endFill();
+        this.guideLineSprite.addChild(this.guideLine);
+
+        this.ticker = PIXI.ticker.shared;
+        this.ticker.autoStart = false;
+        this.ticker.add(play.bind(this));
+    }
 
 
-function onMouseUp(event) {
-    console.log(event.globalX, event.globalY);
-}
+    function setDrawMode() {
+        this.mousedownListener = onMouseDown.bind(this);
+        this.mousemoveListener =  onMouseMove.bind(this);
+        this.mouseupListener = onMouseUp.bind(this);
+
+        this.s = new PIXI.Sprite();
+        this.s.interactive = true;
+        this.s.on('mousedown', this.mousedownListener);
+        stage.addChild(this.s);
+
+        this.g = new PIXI.Graphics();
+        this.g.beginFill(0xFFFFFF, 0.001);
+        this.g.drawRect(0, 0, canvas.width, canvas.height);
+        this.g.endFill();
+        this.s.addChild(g);
+
+        this.canvas = new PIXI.Graphics();
+        stage.addChild(this.canvas);
+
+        this.resultSprite = new PIXI.Sprite();
+        this.resultCanvas = new PIXI.Graphics();
+        this.resultSprite.addChild(this.resultCanvas);
+        stage.addChild(this.resultSprite);
+    }
 
 
-function resize() {
-//    const width = window.innerWidth * window.devicePixelRatio;
-//    const height = window.innerHeight * window.devicePixelRatio;
-//    canvas.width = width;
-//    canvas.height = height;
-//    canvas.style.width = width + 'px';
-//    canvas.style.height = height + 'px';
-//    renderer.resize(width, height);
-}
+    function setRestoreMode() {
+        var center = getCenterPosition();
+        this.resultSprite = new PIXI.Sprite();
+        this.resultSprite.x = center.x - canvasWidth / 2;
+        this.resultSprite.y = center.y - canvasHeight / 2;
+        this.resultCanvas = new PIXI.Graphics();
+        this.resultSprite.addChild(this.resultCanvas);
+        stage.addChild(this.resultSprite);
+    }
 
 
-function updateLoop (ms) {
-    update(ms);
-    requestAnimFrame(updateLoop.bind(this));
-}
+    function onMouseDown(event) {
+        this.s.on('mousemove', this.mousemoveListener);
+        this.s.on('mouseup', this.mouseupListener);
+        this.drawStart();
+    }
 
 
-function update(ms) {
-    console.log('udpate');
-    renderer.render(stage);
-}
+    function onMouseMove(event) {
+        this.draw();
+    }
 
+
+    function onMouseUp(event) {
+        this.s.off('mousemove', this.mousemoveListener);
+        this.s.off('mouseup', this.mouseupListener);
+        this.drawEnd();
+    }
+
+
+    function drawStart() {
+        this.canvas.lineStyle(lineThickness, lineColor);
+        var x = mouse.global.x, y = mouse.global.y;
+        this.prevX = x, this.halfX = x, this.prevY = y, this.halfY = y;
+        this.canvas.moveTo(x, y);
+        drawData.push(HEADER_MOVE_LINE + x.toFixed(2) + DRAW_VO_SEPERATOR + y.toFixed(2));
+    }
+
+
+    function draw() {
+        var x = mouse.global.x, y = mouse.global.y;
+        drawing(this.canvas, x, y);
+        drawData.push(HEADER_DRAW_LINE + x.toFixed(2) + DRAW_VO_SEPERATOR + y.toFixed(2));
+    }
+
+
+    function drawing(graphics, x, y) {
+        this.halfX = x - ((x - this.prevX) >> 1);
+        this.halfY = y - ((y - this.prevY) >> 1);
+        //graphics.quadraticCurveTo(this.prevX, this.prevY, this.halfX, this.halfY);
+        graphics.bezierCurveTo(this.prevX, this.prevY, this.halfX, this.halfY, x, y);
+        this.prevX = x, this.prevY = y;
+    }
+
+
+    function drawEnd() {
+        //console.log(drawData.length);
+    }
+
+
+    function showResult() {
+        var size = getCanvasSize();
+        this.resultCanvas.beginFill(0x000000, 0.001);
+        this.resultCanvas.drawRect(0, 0, size.width, size.height);
+        this.resultCanvas.endFill();
+        this.resultCanvas.lineStyle(lineThickness, lineColor);
+
+        drawIndex = 0;
+        drawTotal = drawData.length;
+        this.drawing = drawing.bind(this);
+        this.ticker.start();
+    }
+
+
+    function play() {
+        if (drawIndex !== drawTotal) {
+            var data = drawData[drawIndex];
+
+            if (data) {
+                var header = data.charAt(0);
+                var body = data.substr(1);
+                var point = body.split(DRAW_VO_SEPERATOR);
+                var x = Number(point[0]), y = Number(point[1]);
+
+                switch (header) {
+                    case HEADER_MOVE_LINE:
+                        this.prevX = this.halfX = x;
+                        this.prevY = this.halfY = y;
+                        this.resultCanvas.moveTo(x, y);
+                        break;
+
+                    case HEADER_DRAW_LINE:
+                        this.drawing(this.resultCanvas, x, y);
+                        break;
+                }
+
+                drawIndex++;
+            }
+        }
+        else {
+            playComplete.call(this);
+        }
+    }
+
+
+    function playStop() {
+        this.ticker.stop();
+    }
+
+
+    function playComplete() {
+        this.ticker.stop();
+        this.drawResult = drawData.join(',') + '@' + this.guideLineSprite.x + ',' + this.guideLineSprite.y + ',' + this.guideLine.width + ',' + this.guideLine.height;
+        console.log('drawResult\n', this.drawResult);
+        drawData = [];
+
+        this.resultSprite.buttonMode = true;
+        this.resultSprite.interactive = true;
+        this.resultSprite.on('click', goAbout);
+    }
+
+
+    function restoreDraw(resultData) {
+        console.log('restoreDraw', resultData);
+
+        var data = resultData.split('@');
+        var offsetData = data[1];
+        var offset = offsetData.split(',');
+
+        console.log('offset[', offset[0], offset[1], ']');
+
+        this.resultSprite.x -= offset[0];
+        this.resultSprite.y -= offset[1];
+
+        drawData = data[0].split(',');
+        this.resultCanvas.lineStyle(lineThickness, 0xFF3300);
+        showResult.call(this);
+    }
+
+
+    function updateLoop (ms) {
+        update(ms);
+        requestAnimFrame(updateLoop.bind(this));
+    }
+
+
+    function update(ms) {
+        renderer.render(stage);
+    }
+
+
+    function resizeWindow() {
+        var size = getCanvasSize(),
+            width = size.width,
+            height = size.height;
+
+        canvas.width = width;
+        canvas.height = height;
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+        renderer.resize(width, height);
+    }
+
+
+    function reset() {
+        drawData = [];
+        drawIndex = 0;
+        drawTotal = 0;
+        this.canvas.clear();
+        this.resultCanvas.clear();
+    }
+
+
+    function goAbout() {
+        window.location.href = 'https://twipixel.github.io/about/';
+    }
+
+
+    function getCanvasSize() {
+        const width = window.innerWidth * window.devicePixelRatio;
+        const height = window.innerHeight * window.devicePixelRatio;
+        return {width: width, height: height};
+    }
+
+
+    function getCenterPosition() {
+        var size = getCanvasSize();
+        return {x: size.width / 2, y: size.height / 2};
+    }
+
+
+    function onKeyUp(event) {
+        //console.log('keyCode', event.keyCode);
+        switch (event.keyCode) {
+            case 27: //consts.KeyCode.ESC
+            case 32://consts.KeyCode.SPACE
+                reset.call(this);
+                break;
+            case 49: //consts.KeyCode.NUM_1
+                showResult.call(this);
+                break;
+            case 50: //consts.KeyCode.NUM_2
+                restoreDraw.call(this, smileData0, this);
+                break;
+        }
+    }
 
 
 </script>
