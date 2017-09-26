@@ -22,7 +22,7 @@ name: 'twipixel'
 author: 'twipixel'
 author_image: "/assets/author.png"
 
-paginate:	5
+paginate:	10
 
 url: "http://twipixel.github.io" # the base hostname & protocol for your site
 baseurl: ""

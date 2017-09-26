@@ -13,7 +13,7 @@ BetweenAS3에서 하나의 ticker에 연결리스트를 활용하여 여러개�
 
 
 
-###### [JavaScript][jsfiddle]
+###### [JSFiddle][jsfiddle]
 
 ```
 // requestAnim shim layer by Paul Irish
@@ -448,9 +448,7 @@ function echo(message) {
   document.body.appendChild(div);
   div.innerHTML = message;
 }
-
 ```
-
 
 
 ###### 테스트 설명
