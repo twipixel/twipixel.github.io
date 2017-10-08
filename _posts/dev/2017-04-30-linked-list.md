@@ -460,24 +460,28 @@ function echo(message) {
 - displayListeners (남아 있는 리스너 보기, 오류 있슴)
 - changeUpdate (업데이트 함수 변경, 토글)
 
+<br>
 
 
 ##### addListener
 
 클릭하면 Listener를 등록하고 등록된 Listener의 tick 함수가 호출되며 duration 이후 종료합니다.
 
+<br>
 
 
 ##### changeUpdate
 
 update 함수를 토글합니다. {true: 패딩과 함께 업데이트, false: 패딩 없이 업데이트}
 
+<br>
 
 
 ##### 패딩 없이 업데이트하는 경우
 
 패딩 없이 업데이트하면 마지막에 등록된 Listener의 tick 함수는 호출하지 않습니다.
 
+<br>
 
 
 ##### 호출하지 않는 이유
@@ -486,6 +490,7 @@ update 함수를 토글합니다. {true: 패딩과 함께 업데이트, false: �
 
 [패딩이 없는 경우 update 함수 호출 순서](#reason) 를 참고하세요.
 
+<br>
 
 
 ##### _tickerListenerPaddings 생성과 연결 상태
@@ -498,6 +503,7 @@ update 함수를 토글합니다. {true: 패딩과 함께 업데이트, false: �
 | [n]   | n + 1        | n - 1        |
 | [9]   | null         | 8            |
 
+<br>
 
 
 ##### addListener 호출 시 리스트 연결 상태
@@ -509,6 +515,7 @@ update 함수를 토글합니다. {true: 패딩과 함께 업데이트, false: �
 | 2             | 1         | 1            | 3            | 2          |
 | 3             | 2         | 2            | null         | 3          |
 
+<br>
 
 
 ##### 패딩이 있는 경우 update 함수 호출 순서 
@@ -521,6 +528,7 @@ update 함수를 토글합니다. {true: 패딩과 함께 업데이트, false: �
 | 1           | 0            | 2            |
 | 0           | null         | 1            |
 
+<br>
 
 
 ##### 패딩이 없는 경우 update 함수 호출 순서 <a id="reason"></a>
@@ -534,6 +542,7 @@ update 함수를 토글합니다. {true: 패딩과 함께 업데이트, false: �
 
 패딩이 없으면 마지막에 등록된 리스너의 tick 함수는 호출되지 않습니다.
 
+<br>
 
 
 ---
