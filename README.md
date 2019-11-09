@@ -94,9 +94,14 @@ Now browse to https://twipixel.github.io
 <br>
 
 
-#### Security Alert
 
-- bundle update 를 실행
+#### Security Alert 처리
+
+bundle update 를 통해 버전 버전 업데이트
+
+- `bundle update` 를 실행
+
+
 
 
 #### 참고 사이트
