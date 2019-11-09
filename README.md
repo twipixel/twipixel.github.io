@@ -94,6 +94,11 @@ Now browse to https://twipixel.github.io
 <br>
 
 
+#### Security Alert
+
+- bundle update 를 실행
+
+
 #### 참고 사이트
 
 - [Install Jekyll on Mac OS X](http://jekyll.tips/jekyll-casts/install-jekyll-on-os-x/)
